@@ -1,0 +1,40 @@
+# ROMs / copyrighted binaries — never commit
+*.gb
+*.gbc
+*.gba
+*.sav
+*.sgm
+*.state
+*.ss*
+*.bios
+*.bin
+
+# raw RA export, if you add one to reproduce generation locally —
+# RA's own achievement/Rich Presence logic, not this project's to publish
+# (matches at any depth, e.g. games/yellow/italian/imports/)
+imports/
+
+# This is the public evidence/handoff repository, not the private research
+# repo: the publication artefacts under generated/ (canonical + local
+# RAIntegration files, Rich Presence) ARE the deliverable and are committed,
+# not ignored. This repo has no generation pipeline of its own (that lives
+# in the private research repo) — these two guards just stop raw RA source
+# data or an intermediate regeneration accidentally landing here if someone
+# drops files in manually.
+games/*/*/data/ra_asset_definitions.csv
+games/*/*/generated/ra_asset_definitions_*.csv
+
+# secrets
+.env
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
