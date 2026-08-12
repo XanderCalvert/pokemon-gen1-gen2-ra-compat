@@ -18,8 +18,9 @@ testing.
 This is the polished result for a Game 723 maintainer or RA QA team, and
 the only fully runtime-verified target in the [Gen I/II regional
 compatibility project](../../../README.md) this repo is part of — see also
-[Pokémon Yellow (French)](../french/README.md), whose address mapping and
-generation are complete but not yet runtime-tested. The full research
+[Pokémon Yellow (French)](../french/README.md) and
+[Pokémon Yellow (German)](../german/README.md), whose address mapping and
+generation are each complete but not yet runtime-tested. The full research
 process — every dead end, every intermediate hypothesis — lives in a
 separate private working repository and is not reproduced here.
 
@@ -120,8 +121,9 @@ engine ([`shared/scripts/asset_localizer.py`](../../../shared/scripts/asset_loca
 shared across every game/locale in this project, included here for
 transparency) driven by a per-locale `LocalizationConfig` — the Italian
 pass is a thin config on top of it, so a new locale pass (as
-[French](../french/README.md) already demonstrates) only needs its own
-address-triage CSV, not a new copy of the engine. The
+[French](../french/README.md) and [German](../german/README.md) already
+demonstrate) only needs its own address-triage CSV, not a new copy of the
+engine. The
 config itself, and the driver script that turns its output into the two
 loadable RA-format files under [`generated/`](generated/) — see
 **Generated files, two formats** below — live in the private research

@@ -27,6 +27,14 @@ games/yellow/sets/723/generated/french/723-User.txt|games/yellow/french/generate
 games/yellow/sets/723/generated/french/ra_asset_definitions.csv|games/yellow/french/generated/ra_asset_definitions_french.csv
 games/yellow/sets/723/generated/french/rich_presence.txt|games/yellow/french/generated/rich_presence_french.txt
 
+# --- german ---
+games/yellow/versions/german/ra_address_triage.csv|games/yellow/german/data/ra_address_triage.csv
+games/yellow/sets/723/generated/german/provenance_report.csv|games/yellow/german/data/german_provenance_report.csv
+games/yellow/sets/723/generated/german/723-canonical.txt|games/yellow/german/generated/723-German-canonical.txt
+games/yellow/sets/723/generated/german/723-User.txt|games/yellow/german/generated/723-German-User.txt
+games/yellow/sets/723/generated/german/ra_asset_definitions.csv|games/yellow/german/generated/ra_asset_definitions_german.csv
+games/yellow/sets/723/generated/german/rich_presence.txt|games/yellow/german/generated/rich_presence_german.txt
+
 # --- shared ---
 # shared/scripts/asset_localizer.py and shared/scripts/csv_safety.py are
 # PUBLIC-OWNED: hand-adapted, locale-agnostic rewrites for this repo, not

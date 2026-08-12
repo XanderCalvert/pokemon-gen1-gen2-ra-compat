@@ -1,6 +1,6 @@
 # Maintainer handoff
 
-Two locales are covered so far, at different stages of readiness. Both
+Three locales are covered so far, at different stages of readiness. All
 share the same methodology and generation engine; what differs is how far
 each has been runtime-tested.
 
@@ -77,12 +77,46 @@ each has been runtime-tested.
 runtime testing above happens — the static/generation work is done, the
 in-game confirmation is not.
 
-## Suggested path (both locales)
+## German — address mapping and generation complete, runtime testing not started
+
+### What's proven
+
+- All 131 WRAM addresses are classified with 0 unresolved: 24 unchanged,
+  107 relocated (106 by the dominant `+5`, 1 tied to the 81978 exception),
+  independently re-derived from the German ROM using the same method as
+  Italian and French — see [wram-relocation-model.md](../german/docs/wram-relocation-model.md).
+- The relocation model is confirmed by 9 live BizHawk WRAM read/write
+  captures against the real German ROM — see
+  [dynamic-testing.md](../german/docs/dynamic-testing.md).
+- The full 76-achievement / 2-leaderboard / Rich Presence German set
+  generates deterministically and passes the same automated audit as
+  Italian and French: 0 unresolved addresses.
+- The 81978 literal exception is derived from a direct live dialogue-buffer
+  read against the German ROM, not by analogy to Italian's or French's
+  differently sized literals.
+
+### What's still open — same material gap as French, vs. Italian
+
+- **No achievement has been loaded as a local achievement in RAIntegration
+  and confirmed to fire under real game logic.** Every German dynamic test
+  so far is a WRAM-level memory read/write, one step below Italian's
+  achievement-firing confirmation.
+- **No full-set RAIntegration smoke test has been run.** Italian's 76/458
+  full-load result has no German equivalent yet.
+- Everything else in Italian's "still open" list above (maintainer/QA
+  review, broader soak testing, distribution-mechanism decision) applies
+  here too, once the runtime gap above is closed.
+
+**Do not represent German as RA-compatible or submission-ready** until the
+runtime testing above happens — the static/generation work is done, the
+in-game confirmation is not.
+
+## Suggested path (all locales)
 
 1. A Game 723 maintainer (or RA QA team member) reviews this repo's
    methodology and results — the evidence, provenance, and generated
    output here are sufficient for that review on their own, for Italian
-   now and for French once its runtime gap is closed.
+   now and for French/German once their runtime gap is closed.
 2. If the approach looks sound and a maintainer wants a candidate patch
    regenerated against a fresh official RA export (e.g. after upstream
    Game 723 changes), that's done from the private research repo this
@@ -90,8 +124,8 @@ in-game confirmation is not.
    the generation pipeline itself, since it depends on RA's own raw
    achievement export, which isn't this project's to publish. Reach out to
    the project author to run a regeneration; the address-mapping/
-   relocation result itself won't change for either locale, since both are
-   already fully resolved and audited.
+   relocation result itself won't change for any locale, since all three
+   are already fully resolved and audited.
 3. Route the generated candidate through RetroAchievements' normal
    ROM-hash-addition / achievement-set review process.
 

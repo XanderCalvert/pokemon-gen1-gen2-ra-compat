@@ -24,7 +24,7 @@ for that specific combination.
 |---|---|---|---|---|
 | Red | — | — | — | — |
 | Blue | — | — | — | — |
-| Yellow | [✅ Complete](games/yellow/italian/README.md) | [🟡 Address mapping + generation complete, runtime testing pending](games/yellow/french/README.md) | — | — |
+| Yellow | [✅ Complete](games/yellow/italian/README.md) | [🟡 Address mapping + generation complete, runtime testing pending](games/yellow/french/README.md) | [🟡 Address mapping + generation complete, runtime testing pending](games/yellow/german/README.md) | — |
 | Gold | — | — | — | — |
 | Silver | — | — | — | — |
 | Crystal | — | — | — | — |
@@ -32,10 +32,11 @@ for that specific combination.
 `—` means not yet investigated — not "not compatible." Yellow/Italian has
 been fully researched, generated, and runtime-verified; see its
 [README](games/yellow/italian/README.md) for the full methodology, results,
-and evidence. Yellow/French has the same address mapping and generation
-work done and audited, but has not yet been runtime-tested in
-RAIntegration — see its [README](games/yellow/french/README.md) for what's
-proven and what's still open.
+and evidence. Yellow/French and Yellow/German each have the same address
+mapping and generation work done and audited, independently, but neither
+has yet been runtime-tested in RAIntegration — see their own READMEs
+([French](games/yellow/french/README.md), [German](games/yellow/german/README.md))
+for what's proven and what's still open.
 
 ## ROM versions
 
@@ -65,17 +66,19 @@ games/
             generated/   the actual generated/testable output (canonical + local RA files, Rich Presence)
         french/          address mapping + generation complete, runtime testing pending
             (same structure as italian/ above)
+        german/          address mapping + generation complete, runtime testing pending
+            (same structure as italian/ above)
 ```
 
-Red, Blue, Gold, Silver, Crystal, and the German/Spanish targets don't have
+Red, Blue, Gold, Silver, Crystal, and the Spanish target don't have
 directories yet — they'll be added under `games/<game>/<locale>/` following
 the same structure as `games/yellow/italian/` once actually investigated.
 The shared engine under `shared/scripts/` is game/locale-agnostic; a new
 target only needs its own evidence data and a thin config on top of it, not
-a copy of the engine — though, as with Yellow/Italian and Yellow/French,
-the config and the driver scripts that actually run it stay in the private
-research repo, since they depend on RA's own raw per-target achievement
-export.
+a copy of the engine — though, as with Yellow/Italian, Yellow/French, and
+Yellow/German, the config and the driver scripts that actually run it stay
+in the private research repo, since they depend on RA's own raw per-target
+achievement export.
 
 ## Getting started
 

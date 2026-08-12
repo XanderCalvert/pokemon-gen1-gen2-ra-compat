@@ -6,11 +6,14 @@ Determine whether RetroAchievements [Game 723](https://retroachievements.org/gam
 (Pokémon Yellow, authored against the English ROM) can be made to work
 against an official localised retail ROM, and produce exact, evidence-backed
 documentation of exactly what has to change if not. The same 8-step
-pipeline below has been run independently, from scratch, against both the
-Italian and French ROMs — the worked example in this doc cites Italian's
-numbers and file paths, but every step applies identically to
-[French](../french/README.md), whose own results live under
-`games/yellow/french/`.
+pipeline below has been run independently, from scratch, against the
+Italian, French, and German ROMs — the worked example in this doc cites
+Italian's numbers and file paths, but every step applies identically to
+[French](../french/README.md) and [German](../german/README.md), whose own
+results live under `games/yellow/french/` and `games/yellow/german/`
+respectively. Step 6 (dynamic confirmation) is the one step whose *depth*
+currently differs by locale — see each locale's own README for what
+runtime testing has and hasn't been done.
 
 ## Ground rules
 
