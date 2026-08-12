@@ -97,7 +97,7 @@ references, relocation counts, and final status per asset — is in
 The broader derivation tables (the full pret-symbol WRAM table, the
 separate map-ID literal axis, the dynamic test protocol) live in the
 private research repo, not in this snapshot — see
-[docs/generation-report.md](docs/generation-report.md) for what was
+[docs/generation-report.md](../docs/generation-report.md) for what was
 checked before publication.
 
 ## Achievement 81978 — the one non-address exception
@@ -123,7 +123,7 @@ config itself, and the driver script that turns its output into the two
 loadable RA-format files under [`generated/`](generated/) — see
 **Generated files, two formats** below — live in the private research
 repo, since both need RA's own raw achievement export to run. Details of
-what was generated and how: [docs/generation-report.md](docs/generation-report.md).
+what was generated and how: [docs/generation-report.md](../docs/generation-report.md).
 
 ## Automated validation
 
@@ -136,7 +136,7 @@ independent re-derivation of the substitution diffed against the actual
 output — plus a regression check diffing the generator's output against
 the 7 achievements actually run on real hardware, so a future regeneration
 can't silently drift from what was physically tested. Full results:
-[docs/generation-report.md](docs/generation-report.md). This snapshot
+[docs/generation-report.md](../docs/generation-report.md). This snapshot
 doesn't include the audit scripts themselves — they depend on the same
 private RA export the generator does — but does include their result
 ([`data/italian_provenance_report.csv`](data/italian_provenance_report.csv))
@@ -208,7 +208,7 @@ What you *can* verify directly from this repo, without any RA export:
 If you're a Game 723 maintainer and want the candidate patch regenerated
 (e.g. against a fresh official RA export after an upstream change), reach
 out to the project author — see
-[docs/maintainer-handoff.md](docs/maintainer-handoff.md).
+[docs/maintainer-handoff.md](../docs/maintainer-handoff.md).
 
 ## Generated files, two formats — read this before loading anything
 
@@ -258,16 +258,17 @@ throughout this project.
 
 This target lives at `games/yellow/italian/` within the larger
 [Gen I/II regional compatibility project](../../../README.md); paths below
-are relative to this directory.
+are relative to this directory unless noted.
 
 ```
 README.md  (this file)
-docs/
+../docs/                       shared across every games/yellow/<locale>/ target
     methodology.md            how the investigation approached the problem
-    wram-relocation-model.md  the +5 bounded-region proof, in full
-    dynamic-testing.md        all 7 targeted dynamic tests + the 81978 case
     generation-report.md      what was generated and how it was audited
     maintainer-handoff.md     current status + suggested next step
+docs/                          Italian-specific
+    wram-relocation-model.md  the +5 bounded-region proof, in full
+    dynamic-testing.md        all 7 targeted dynamic tests + the 81978 case
 data/
     ra_address_triage.csv           the 131 RA-referenced addresses, classified,
                                      with an inline evidence citation per row
@@ -296,6 +297,6 @@ a runnable pipeline.
 
 This project is ready for RetroAchievements compatibility testing /
 maintainer review of Game 723. See
-[docs/maintainer-handoff.md](docs/maintainer-handoff.md) for what's proven,
+[docs/maintainer-handoff.md](../docs/maintainer-handoff.md) for what's proven,
 what's still open, and a suggested path to get an official Italian-compatible
 patch reviewed.

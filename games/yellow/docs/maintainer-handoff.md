@@ -6,10 +6,10 @@
   classified with 0 unresolved: 30 unchanged, 101 relocated (99 by the
   dominant `+5` within one bounded WRAM region — not a global offset — and
   2 tied to the documented 81978 literal exception below) (see
-  [wram-relocation-model.md](wram-relocation-model.md)).
+  [wram-relocation-model.md](../italian/docs/wram-relocation-model.md)).
 - The relocation model is confirmed both statically (ROM cross-reference
   evidence) and dynamically (7/7 real-hardware tests against the actual
-  Italian ROM — see [dynamic-testing.md](dynamic-testing.md)).
+  Italian ROM — see [dynamic-testing.md](../italian/docs/dynamic-testing.md)).
 - The full 76-achievement / 2-leaderboard / Rich Presence Italian set
   generates deterministically from the official set and passes an
   automated audit: 1:1 asset mapping, unchanged metadata, preserved

@@ -34,6 +34,14 @@ has been researched and generated so far; see its
 [README](games/yellow/italian/README.md) for the full methodology, results,
 and evidence.
 
+## ROM versions
+
+See [rom-hashes.md](rom-hashes.md) for the exact MD5/SHA1 of every ROM dump
+this project targets or has targeted, across every game/language above, and
+what's explicitly out of scope (fan translations, Japanese, Korean). No ROM
+file is included in this repository, or ever will be — only identifying
+hashes.
+
 ## Repository layout
 
 ```
@@ -45,10 +53,12 @@ shared/
         csv_safety.py           atomic CSV read/write helper it depends on
 games/
     yellow/
-        italian/        the only implemented target so far
+        docs/            shared across every games/yellow/<locale>/ target
+            methodology, generation report, maintainer handoff
+        italian/         the only implemented target so far
             README.md    maintainer-facing writeup for Game 723
             data/        the address-triage evidence + per-asset provenance report
-            docs/        methodology, relocation model, dynamic testing, generation report
+            docs/        locale-specific: relocation model, dynamic testing
             generated/   the actual generated/testable output (canonical + local RA files, Rich Presence)
 ```
 

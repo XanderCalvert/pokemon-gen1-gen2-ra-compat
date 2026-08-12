@@ -10,9 +10,9 @@ documentation of exactly what has to change if not.
 ## Ground rules
 
 - ROMs are never committed or redistributed by this repo. Only their
-  identifying hashes are published (see the main [README](../README.md)).
+  identifying hashes are published (see the main [README](../../../README.md)).
 - No claim of "compatible" without evidence. Every address in
-  [`data/ra_address_triage.csv`](../data/ra_address_triage.csv) carries a
+  [`data/ra_address_triage.csv`](../italian/data/ra_address_triage.csv) carries a
   classification and an evidence column.
 - The English ROM is the reference for WRAM/HRAM/SRAM naming, using the
   public `pret/pokeyellow` decompilation's symbol layout (its SHA-1 matches
@@ -42,18 +42,18 @@ documentation of exactly what has to change if not.
    symbols, both ROMs — lives in the private research repo; the 131 rows
    RetroAchievements' Game 723 actually depends on, each with its own
    evidence citation, are published in
-   [`data/ra_address_triage.csv`](../data/ra_address_triage.csv) (see
+   [`data/ra_address_triage.csv`](../italian/data/ra_address_triage.csv) (see
    step 5).
 5. **RA-address join** — cross-reference the 131 addresses RetroAchievements'
    Game 723 actually depends on against that table, filtering to
    high-confidence (low ROM-bank) evidence only, which is what exposes the
    clean bimodal `+5`/`+0` relocation pattern — see
-   [wram-relocation-model.md](wram-relocation-model.md). Result:
-   [`data/ra_address_triage.csv`](../data/ra_address_triage.csv).
+   [wram-relocation-model.md](../italian/docs/wram-relocation-model.md). Result:
+   [`data/ra_address_triage.csv`](../italian/data/ra_address_triage.csv).
 6. **Dynamic confirmation** — a targeted set of real-hardware
    (BizHawk + RAIntegration) tests to independently confirm the structural
    `+5` model under actual game logic, not just static byte comparison —
-   see [dynamic-testing.md](dynamic-testing.md).
+   see [dynamic-testing.md](../italian/docs/dynamic-testing.md).
 7. **Generation** — a deterministic address-substitution engine applies the
    confirmed mapping to the official RA asset definitions, producing a
    translated Italian set — see [generation-report.md](generation-report.md).
@@ -65,7 +65,7 @@ documentation of exactly what has to change if not.
 
 A naive global offset (e.g. "add 5 to every WRAM0 address") produces
 garbage on either side of the actual insertion point. The falsification
-test in [wram-relocation-model.md](wram-relocation-model.md) rules that out
+test in [wram-relocation-model.md](../italian/docs/wram-relocation-model.md) rules that out
 structurally: filtering ROM cross-reference evidence to trustworthy banks
 collapses the observed address deltas into two dominant values (`+5` and
 `+0`), each independently corroborated by over 200 evidenced reference
