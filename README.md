@@ -24,15 +24,18 @@ for that specific combination.
 |---|---|---|---|---|
 | Red | — | — | — | — |
 | Blue | — | — | — | — |
-| Yellow | [✅ Complete](games/yellow/italian/README.md) | — | — | — |
+| Yellow | [✅ Complete](games/yellow/italian/README.md) | [🟡 Address mapping + generation complete, runtime testing pending](games/yellow/french/README.md) | — | — |
 | Gold | — | — | — | — |
 | Silver | — | — | — | — |
 | Crystal | — | — | — | — |
 
-`—` means not yet investigated — not "not compatible." Only Yellow/Italian
-has been researched and generated so far; see its
+`—` means not yet investigated — not "not compatible." Yellow/Italian has
+been fully researched, generated, and runtime-verified; see its
 [README](games/yellow/italian/README.md) for the full methodology, results,
-and evidence.
+and evidence. Yellow/French has the same address mapping and generation
+work done and audited, but has not yet been runtime-tested in
+RAIntegration — see its [README](games/yellow/french/README.md) for what's
+proven and what's still open.
 
 ## ROM versions
 
@@ -55,22 +58,24 @@ games/
     yellow/
         docs/            shared across every games/yellow/<locale>/ target
             methodology, generation report, maintainer handoff
-        italian/         the only implemented target so far
+        italian/         fully researched, generated, and runtime-verified
             README.md    maintainer-facing writeup for Game 723
             data/        the address-triage evidence + per-asset provenance report
             docs/        locale-specific: relocation model, dynamic testing
             generated/   the actual generated/testable output (canonical + local RA files, Rich Presence)
+        french/          address mapping + generation complete, runtime testing pending
+            (same structure as italian/ above)
 ```
 
-Red, Blue, Gold, Silver, Crystal, and the French/German/Spanish targets
-don't have directories yet — they'll be added under `games/<game>/<locale>/`
-following the same structure as `games/yellow/italian/` once actually
-investigated. The shared engine under `shared/scripts/` is
-game/locale-agnostic; a new target only needs its own evidence data and a
-thin config on top of it, not a copy of the engine — though, as with
-Yellow/Italian, the config and the driver scripts that actually run it
-stay in the private research repo, since they depend on RA's own raw
-per-target achievement export.
+Red, Blue, Gold, Silver, Crystal, and the German/Spanish targets don't have
+directories yet — they'll be added under `games/<game>/<locale>/` following
+the same structure as `games/yellow/italian/` once actually investigated.
+The shared engine under `shared/scripts/` is game/locale-agnostic; a new
+target only needs its own evidence data and a thin config on top of it, not
+a copy of the engine — though, as with Yellow/Italian and Yellow/French,
+the config and the driver scripts that actually run it stay in the private
+research repo, since they depend on RA's own raw per-target achievement
+export.
 
 ## Getting started
 

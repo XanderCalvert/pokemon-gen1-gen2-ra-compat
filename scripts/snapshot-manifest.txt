@@ -20,11 +20,12 @@ games/yellow/sets/723/generated/italian/ra_asset_definitions.csv|games/yellow/it
 games/yellow/sets/723/generated/italian/rich_presence.txt|games/yellow/italian/generated/rich_presence_italian.txt
 
 # --- french ---
-# Not yet populated: games/yellow/versions/french/status.json currently
-# reports "French is NOT yet ready for full Game 723 generation" (13
-# addresses still open, no overrides.csv entry for the 81978 literal).
-# Add french rows here once that status changes, following the same
-# source/dest shape as the italian block above.
+games/yellow/versions/french/ra_address_triage.csv|games/yellow/french/data/ra_address_triage.csv
+games/yellow/sets/723/generated/french/provenance_report.csv|games/yellow/french/data/french_provenance_report.csv
+games/yellow/sets/723/generated/french/723-canonical.txt|games/yellow/french/generated/723-French-canonical.txt
+games/yellow/sets/723/generated/french/723-User.txt|games/yellow/french/generated/723-French-User.txt
+games/yellow/sets/723/generated/french/ra_asset_definitions.csv|games/yellow/french/generated/ra_asset_definitions_french.csv
+games/yellow/sets/723/generated/french/rich_presence.txt|games/yellow/french/generated/rich_presence_french.txt
 
 # --- shared ---
 # shared/scripts/asset_localizer.py and shared/scripts/csv_safety.py are

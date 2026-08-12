@@ -4,8 +4,13 @@
 
 Determine whether RetroAchievements [Game 723](https://retroachievements.org/game/723)
 (Pokémon Yellow, authored against the English ROM) can be made to work
-against the official Italian retail ROM, and produce exact, evidence-backed
-documentation of exactly what has to change if not.
+against an official localised retail ROM, and produce exact, evidence-backed
+documentation of exactly what has to change if not. The same 8-step
+pipeline below has been run independently, from scratch, against both the
+Italian and French ROMs — the worked example in this doc cites Italian's
+numbers and file paths, but every step applies identically to
+[French](../french/README.md), whose own results live under
+`games/yellow/french/`.
 
 ## Ground rules
 
