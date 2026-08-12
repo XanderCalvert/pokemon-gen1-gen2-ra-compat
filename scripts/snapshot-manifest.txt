@@ -1,0 +1,33 @@
+# Deterministic source -> destination manifest for update-snapshot.sh
+#
+# Format: source/path|destination/path
+#   - both paths are relative to their repo root (source repo root on the
+#     left, this display repo root on the right)
+#   - lines starting with # and blank lines are ignored
+#   - every published file must be listed explicitly here; the sync script
+#     does not discover or copy directories
+#
+# This file is the ONLY place that decides what gets published. Add a
+# locale's entries here once its output is actually ready -- do not add
+# placeholder rows for files that don't exist yet in the source repo.
+
+# --- italian ---
+games/yellow/versions/italian/ra_address_triage.csv|games/yellow/italian/data/ra_address_triage.csv
+games/yellow/sets/723/generated/italian/provenance_report.csv|games/yellow/italian/data/italian_provenance_report.csv
+games/yellow/sets/723/generated/italian/723-canonical.txt|games/yellow/italian/generated/723-Italian-canonical.txt
+games/yellow/sets/723/generated/italian/723-User.txt|games/yellow/italian/generated/723-Italian-User.txt
+games/yellow/sets/723/generated/italian/ra_asset_definitions.csv|games/yellow/italian/generated/ra_asset_definitions_italian.csv
+games/yellow/sets/723/generated/italian/rich_presence.txt|games/yellow/italian/generated/rich_presence_italian.txt
+
+# --- french ---
+# Not yet populated: games/yellow/versions/french/status.json currently
+# reports "French is NOT yet ready for full Game 723 generation" (13
+# addresses still open, no overrides.csv entry for the 81978 literal).
+# Add french rows here once that status changes, following the same
+# source/dest shape as the italian block above.
+
+# --- shared ---
+# shared/scripts/asset_localizer.py and shared/scripts/csv_safety.py are
+# PUBLIC-OWNED: hand-adapted, locale-agnostic rewrites for this repo, not
+# raw copies of scripts/asset_localizer.py / scripts/csv_safety.py in the
+# source repo. They are intentionally not in this manifest.
