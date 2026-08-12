@@ -122,6 +122,13 @@ Unlike the [Italian target](../italian/README.md), this snapshot does
 - A full-set RAIntegration smoke test (all 76 achievements loaded against
   the real French ROM).
 
+The concrete plan for closing this gap — a 7-item Tier 1 (~10–15 min) plus
+3-item Tier 2 (~10–15 min) test set, reusing the same save states across
+all four locales — is
+[games/yellow/docs/smoke-test-suite.md](../docs/smoke-test-suite.md);
+results are tracked per locale in
+[smoke-test-results.csv](../docs/smoke-test-results.csv).
+
 Everything published here is static generation plus live WRAM-level
 dynamic confirmation of the address model (see
 [docs/dynamic-testing.md](docs/dynamic-testing.md)) — real evidence, but

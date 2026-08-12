@@ -18,8 +18,9 @@ testing.
 This is the polished result for a Game 723 maintainer or RA QA team, and
 the only fully runtime-verified target in the [Gen I/II regional
 compatibility project](../../../README.md) this repo is part of — see also
-[Pokémon Yellow (French)](../french/README.md) and
-[Pokémon Yellow (German)](../german/README.md), whose address mapping and
+[Pokémon Yellow (French)](../french/README.md),
+[Pokémon Yellow (German)](../german/README.md), and
+[Pokémon Yellow (Spanish)](../spanish/README.md), whose address mapping and
 generation are each complete but not yet runtime-tested. The full research
 process — every dead end, every intermediate hypothesis — lives in a
 separate private working repository and is not reproduced here.
@@ -121,9 +122,9 @@ engine ([`shared/scripts/asset_localizer.py`](../../../shared/scripts/asset_loca
 shared across every game/locale in this project, included here for
 transparency) driven by a per-locale `LocalizationConfig` — the Italian
 pass is a thin config on top of it, so a new locale pass (as
-[French](../french/README.md) and [German](../german/README.md) already
-demonstrate) only needs its own address-triage CSV, not a new copy of the
-engine. The
+[French](../french/README.md), [German](../german/README.md), and
+[Spanish](../spanish/README.md) already demonstrate) only needs its own
+address-triage CSV, not a new copy of the engine. The
 config itself, and the driver script that turns its output into the two
 loadable RA-format files under [`generated/`](generated/) — see
 **Generated files, two formats** below — live in the private research
@@ -183,6 +184,13 @@ RAIntegration against the Italian ROM and observed:
 reproduced or verified by the scripts in this repository.** It is reported
 here as-is, distinct from the automated static validation and the 7
 scripted dynamic tests above, which are independently reproducible.
+
+Several of the save states from this investigation (party at Level 50,
+Route 12-15 gauntlet, Hall of Fame entrance) are reused directly in
+[games/yellow/docs/smoke-test-suite.md](../docs/smoke-test-suite.md), the
+cross-locale runtime smoke-test plan designed to bring French, German, and
+Spanish up to this same level of runtime confidence without repeating a
+full playthrough per language.
 
 ## Reproduction
 

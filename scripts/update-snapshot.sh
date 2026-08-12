@@ -67,7 +67,7 @@ is_banned() {
     printf '%s' "$1" | grep -Eiq "$BANNED_PATTERN"
 }
 
-declare -A COUNTS=([italian]=0 [french]=0 [german]=0 [shared]=0 [other]=0)
+declare -A COUNTS=([italian]=0 [french]=0 [german]=0 [spanish]=0 [shared]=0 [other]=0)
 declare -a MANAGED_DEST_DIRS=()
 declare -A KNOWN_DEST=()
 
@@ -76,6 +76,7 @@ category_for() {
         games/yellow/italian/*) echo italian ;;
         games/yellow/french/*) echo french ;;
         games/yellow/german/*) echo german ;;
+        games/yellow/spanish/*) echo spanish ;;
         shared/*) echo shared ;;
         *) echo other ;;
     esac
@@ -151,12 +152,13 @@ if [ "$DRY_RUN" -eq 1 ]; then
     exit 0
 fi
 
-total=$((COUNTS[italian] + COUNTS[french] + COUNTS[german] + COUNTS[shared] + COUNTS[other]))
+total=$((COUNTS[italian] + COUNTS[french] + COUNTS[german] + COUNTS[spanish] + COUNTS[shared] + COUNTS[other]))
 echo
 echo "Snapshot updated successfully"
 echo
 echo "Italian: ${COUNTS[italian]}"
 echo "French: ${COUNTS[french]}"
 echo "German: ${COUNTS[german]}"
+echo "Spanish: ${COUNTS[spanish]}"
 echo "Shared: ${COUNTS[shared]}"
 echo "Total: $total"

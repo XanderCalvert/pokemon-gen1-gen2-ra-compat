@@ -1,8 +1,15 @@
 # Maintainer handoff
 
-Three locales are covered so far, at different stages of readiness. All
+Four locales are covered so far, at different stages of readiness. All
 share the same methodology and generation engine; what differs is how far
-each has been runtime-tested.
+each has been runtime-tested. The runtime-testing gap named repeatedly
+below (French, German, Spanish) has a concrete closing plan:
+[smoke-test-suite.md](smoke-test-suite.md) — a 7-item Tier 1 (~10–15 min)
+plus 3-item Tier 2 (~10–15 min) test set, designed to reuse the same save
+states across all four locales rather than requiring a fresh playthrough
+per language. Results are tracked per locale in
+[smoke-test-results.csv](smoke-test-results.csv); every row is currently
+`NOT RUN`.
 
 ## Italian — ready for maintainer review
 
@@ -68,7 +75,8 @@ each has been runtime-tested.
   so far is a WRAM-level memory read/write, one step below Italian's
   achievement-firing confirmation.
 - **No full-set RAIntegration smoke test has been run.** Italian's 76/458
-  full-load result has no French equivalent yet.
+  full-load result has no French equivalent yet — see
+  [smoke-test-suite.md](smoke-test-suite.md) for the planned test.
 - Everything else in Italian's "still open" list above (maintainer/QA
   review, broader soak testing, distribution-mechanism decision) applies
   here too, once the runtime gap above is closed.
@@ -102,7 +110,8 @@ in-game confirmation is not.
   so far is a WRAM-level memory read/write, one step below Italian's
   achievement-firing confirmation.
 - **No full-set RAIntegration smoke test has been run.** Italian's 76/458
-  full-load result has no German equivalent yet.
+  full-load result has no German equivalent yet — see
+  [smoke-test-suite.md](smoke-test-suite.md) for the planned test.
 - Everything else in Italian's "still open" list above (maintainer/QA
   review, broader soak testing, distribution-mechanism decision) applies
   here too, once the runtime gap above is closed.
@@ -111,12 +120,48 @@ in-game confirmation is not.
 runtime testing above happens — the static/generation work is done, the
 in-game confirmation is not.
 
+## Spanish — address mapping and generation complete, runtime testing not started
+
+### What's proven
+
+- All 131 WRAM addresses are classified with 0 unresolved: 25 unchanged,
+  106 relocated (105 by the dominant `+5`, 1 tied to the 81978 exception),
+  independently re-derived from the Spanish ROM using the same method as
+  Italian, French, and German — see [wram-relocation-model.md](../spanish/docs/wram-relocation-model.md).
+  Unlike French and German, no secondary sub-boundary anomaly was found.
+- The relocation model is confirmed by 4 targeted live BizHawk WRAM
+  read/write sessions plus a 5th corroborating pass against the real
+  Spanish ROM — see [dynamic-testing.md](../spanish/docs/dynamic-testing.md).
+- The full 76-achievement / 2-leaderboard / Rich Presence Spanish set
+  generates deterministically and passes the same automated audit as
+  Italian, French, and German: 0 unresolved addresses.
+- The 81978 literal exception is derived from a direct live dialogue-buffer
+  read against the Spanish ROM, not by analogy to any other localisation's
+  differently sized literal.
+
+### What's still open — same material gap as French/German, vs. Italian
+
+- **No achievement has been loaded as a local achievement in RAIntegration
+  and confirmed to fire under real game logic.** Every Spanish dynamic
+  test so far is a WRAM-level memory read/write, one step below Italian's
+  achievement-firing confirmation.
+- **No full-set RAIntegration smoke test has been run.** Italian's 76/458
+  full-load result has no Spanish equivalent yet — see
+  [smoke-test-suite.md](smoke-test-suite.md) for the planned test.
+- Everything else in Italian's "still open" list above (maintainer/QA
+  review, broader soak testing, distribution-mechanism decision) applies
+  here too, once the runtime gap above is closed.
+
+**Do not represent Spanish as RA-compatible or submission-ready** until the
+runtime testing above happens — the static/generation work is done, the
+in-game confirmation is not.
+
 ## Suggested path (all locales)
 
 1. A Game 723 maintainer (or RA QA team member) reviews this repo's
    methodology and results — the evidence, provenance, and generated
    output here are sufficient for that review on their own, for Italian
-   now and for French/German once their runtime gap is closed.
+   now and for French/German/Spanish once their runtime gap is closed.
 2. If the approach looks sound and a maintainer wants a candidate patch
    regenerated against a fresh official RA export (e.g. after upstream
    Game 723 changes), that's done from the private research repo this
@@ -124,7 +169,7 @@ in-game confirmation is not.
    the generation pipeline itself, since it depends on RA's own raw
    achievement export, which isn't this project's to publish. Reach out to
    the project author to run a regeneration; the address-mapping/
-   relocation result itself won't change for any locale, since all three
+   relocation result itself won't change for any locale, since all four
    are already fully resolved and audited.
 3. Route the generated candidate through RetroAchievements' normal
    ROM-hash-addition / achievement-set review process.

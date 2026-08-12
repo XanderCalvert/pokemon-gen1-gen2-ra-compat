@@ -24,7 +24,7 @@ for that specific combination.
 |---|---|---|---|---|
 | Red | — | — | — | — |
 | Blue | — | — | — | — |
-| Yellow | [✅ Complete](games/yellow/italian/README.md) | [🟡 Address mapping + generation complete, runtime testing pending](games/yellow/french/README.md) | [🟡 Address mapping + generation complete, runtime testing pending](games/yellow/german/README.md) | — |
+| Yellow | [✅ Complete](games/yellow/italian/README.md) | [🟡 Address mapping + generation complete, runtime testing pending](games/yellow/french/README.md) | [🟡 Address mapping + generation complete, runtime testing pending](games/yellow/german/README.md) | [🟡 Address mapping + generation complete, runtime testing pending](games/yellow/spanish/README.md) |
 | Gold | — | — | — | — |
 | Silver | — | — | — | — |
 | Crystal | — | — | — | — |
@@ -32,10 +32,11 @@ for that specific combination.
 `—` means not yet investigated — not "not compatible." Yellow/Italian has
 been fully researched, generated, and runtime-verified; see its
 [README](games/yellow/italian/README.md) for the full methodology, results,
-and evidence. Yellow/French and Yellow/German each have the same address
-mapping and generation work done and audited, independently, but neither
-has yet been runtime-tested in RAIntegration — see their own READMEs
-([French](games/yellow/french/README.md), [German](games/yellow/german/README.md))
+and evidence. Yellow/French, Yellow/German, and Yellow/Spanish each have
+the same address mapping and generation work done and audited,
+independently, but none has yet been runtime-tested in RAIntegration — see
+their own READMEs ([French](games/yellow/french/README.md),
+[German](games/yellow/german/README.md), [Spanish](games/yellow/spanish/README.md))
 for what's proven and what's still open.
 
 ## ROM versions
@@ -59,6 +60,8 @@ games/
     yellow/
         docs/            shared across every games/yellow/<locale>/ target
             methodology, generation report, maintainer handoff
+            smoke-test-suite.md      cross-locale runtime smoke-test plan (design only)
+            smoke-test-results.csv   PASS/FAIL/NOT RUN tracking grid, one row per test x locale
         italian/         fully researched, generated, and runtime-verified
             README.md    maintainer-facing writeup for Game 723
             data/        the address-triage evidence + per-asset provenance report
@@ -68,17 +71,18 @@ games/
             (same structure as italian/ above)
         german/          address mapping + generation complete, runtime testing pending
             (same structure as italian/ above)
+        spanish/         address mapping + generation complete, runtime testing pending
+            (same structure as italian/ above)
 ```
 
-Red, Blue, Gold, Silver, Crystal, and the Spanish target don't have
-directories yet — they'll be added under `games/<game>/<locale>/` following
-the same structure as `games/yellow/italian/` once actually investigated.
-The shared engine under `shared/scripts/` is game/locale-agnostic; a new
-target only needs its own evidence data and a thin config on top of it, not
-a copy of the engine — though, as with Yellow/Italian, Yellow/French, and
-Yellow/German, the config and the driver scripts that actually run it stay
-in the private research repo, since they depend on RA's own raw per-target
-achievement export.
+Red, Blue, Gold, Silver, and Crystal don't have directories yet — they'll
+be added under `games/<game>/<locale>/` following the same structure as
+`games/yellow/italian/` once actually investigated. The shared engine
+under `shared/scripts/` is game/locale-agnostic; a new target only needs
+its own evidence data and a thin config on top of it, not a copy of the
+engine — though, as with every Yellow locale above, the config and the
+driver scripts that actually run it stay in the private research repo,
+since they depend on RA's own raw per-target achievement export.
 
 ## Getting started
 

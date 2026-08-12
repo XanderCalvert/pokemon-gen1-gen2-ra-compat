@@ -18,7 +18,7 @@ triage CSV). It walks every achievement/leaderboard/Rich Presence condition
 in the official RA asset definitions, substitutes any English address that
 has a confirmed counterpart in that locale's address-triage CSV
 ([Italian's](../italian/data/ra_address_triage.csv), [French's](../french/data/ra_address_triage.csv),
-[German's](../german/data/ra_address_triage.csv)),
+[German's](../german/data/ra_address_triage.csv), [Spanish's](../spanish/data/ra_address_triage.csv)),
 and leaves everything else (literal values, hit counts, flags, structure)
 untouched. Each locale's config — a thin file pointing this engine at its
 triage CSV plus its own documented literal override for achievement 81978
@@ -29,8 +29,9 @@ output formats** in the
 [Italian README](../italian/README.md#generated-files-two-formats--read-this-before-loading-anything)
 for why there are two output files, and why only one of them is actually
 loadable locally in RAIntegration — the same applies to French's
-[`generated/`](../french/generated/) and German's
-[`generated/`](../german/generated/) output.
+[`generated/`](../french/generated/), German's
+[`generated/`](../german/generated/), and Spanish's
+[`generated/`](../spanish/generated/) output.
 
 ## Audit
 
@@ -95,6 +96,16 @@ static/generation half of validation only; see
 [German's dynamic-testing.md](../german/docs/dynamic-testing.md) for what
 runtime testing has and hasn't been done.
 
+### Spanish — as last run against the full official asset set
+
+Generation totals: 78 assets (76 achievements + 2 leaderboards), 693
+conditions processed, 279 memory references processed (33 unchanged, 701
+relocated, 1 explicit exception), **0 unresolved addresses**. Same 7-check
+audit, same pass criteria as Italian, French, and German above — this is
+the static/generation half of validation only; see
+[Spanish's dynamic-testing.md](../spanish/docs/dynamic-testing.md) for
+what runtime testing has and hasn't been done.
+
 (78 = 76 achievements + 2 leaderboards, for every locale; Rich Presence is
 generated and verified alongside but isn't a numbered RA "asset" in this
 count.)
@@ -103,7 +114,8 @@ count.)
 
 [`data/italian_provenance_report.csv`](../italian/data/italian_provenance_report.csv),
 [`data/french_provenance_report.csv`](../french/data/french_provenance_report.csv),
-and [`data/german_provenance_report.csv`](../german/data/german_provenance_report.csv)
+[`data/german_provenance_report.csv`](../german/data/german_provenance_report.csv),
+and [`data/spanish_provenance_report.csv`](../spanish/data/spanish_provenance_report.csv)
 are the per-asset result of each locale's audit: for each of the 78
 generated assets, its source/target memory references, how many addresses
 were relocated, and its final status (`RELOCATED` or the one documented
@@ -117,8 +129,9 @@ diffed against the 7 achievements that were actually run on real hardware
 (see [dynamic-testing.md](../italian/docs/dynamic-testing.md)), so a future
 change to the triage data or the substitution engine in the private repo
 can't silently drift away from what was physically confirmed to work
-in-game. **Neither French nor German has an equivalent regression check
-yet** — since no achievement in either locale has been run as a local
-achievement in RAIntegration, there's nothing physically confirmed to diff
-against (see [French's](../french/docs/dynamic-testing.md) and
-[German's](../german/docs/dynamic-testing.md) dynamic-testing docs).
+in-game. **None of French, German, or Spanish has an equivalent regression
+check yet** — since no achievement in any of those locales has been run as
+a local achievement in RAIntegration, there's nothing physically confirmed
+to diff against (see [French's](../french/docs/dynamic-testing.md),
+[German's](../german/docs/dynamic-testing.md), and
+[Spanish's](../spanish/docs/dynamic-testing.md) dynamic-testing docs).
