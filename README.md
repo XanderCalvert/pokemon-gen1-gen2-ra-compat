@@ -39,6 +39,21 @@ their own READMEs ([French](games/yellow/french/README.md),
 [German](games/yellow/german/README.md), [Spanish](games/yellow/spanish/README.md))
 for what's proven and what's still open.
 
+### Bonus achievement sets (RetroAchievements Game 723, Yellow)
+
+RA game 723 also has two bonus achievement sets layered on top of the core
+set above. Both reuse addresses already proven for the core set — no new
+address risk — so their own runtime coverage is scoped down to the
+structural patterns each one introduces; see
+[smoke-test-suite-8486.md](games/yellow/docs/smoke-test-suite-8486.md) for
+the design and [smoke-test-results-8486.csv](games/yellow/docs/smoke-test-results-8486.csv)
+for the PASS/FAIL/NOT RUN tracking grid.
+
+| Set | Description | Status |
+|---|---|---|
+| 8486 | Prof. Oak Challenge | 🟡 Address mapping + generation complete, smoke-test suite designed, runtime testing pending |
+| 3440 | — | — not yet investigated |
+
 ## ROM versions
 
 See [rom-hashes.md](rom-hashes.md) for the exact MD5/SHA1 of every ROM dump
@@ -62,6 +77,8 @@ games/
             methodology, generation report, maintainer handoff
             smoke-test-suite.md      cross-locale runtime smoke-test plan (design only)
             smoke-test-results.csv   PASS/FAIL/NOT RUN tracking grid, one row per test x locale
+            smoke-test-suite-8486.md      Set 8486 (bonus) smoke-test plan (design only)
+            smoke-test-results-8486.csv   Set 8486 PASS/FAIL/NOT RUN tracking grid
         italian/         fully researched, generated, and runtime-verified
             README.md    maintainer-facing writeup for Game 723
             data/        the address-triage evidence + per-asset provenance report

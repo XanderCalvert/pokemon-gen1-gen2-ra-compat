@@ -1,0 +1,10 @@
+tier,test_id,asset_id,local_id,title,italian,french,german,spanish,date_tested,notes
+1,1,298395,111001001,Pikachu,NOT RUN,NOT RUN,NOT RUN,NOT RUN,,
+1,2,298412,111001018,Badge 1 - Brock,NOT RUN,NOT RUN,NOT RUN,NOT RUN,,
+1,3,298421,111001027,Moon Stone I,NOT RUN,NOT RUN,NOT RUN,NOT RUN,,
+1,4,298479,111001085,Hitmonlee - Hitmonchan,NOT RUN,NOT RUN,NOT RUN,NOT RUN,,
+1,5a,298526,111001132,Badge 6 - Sabrina or Blaine,NOT RUN,NOT RUN,NOT RUN,NOT RUN,,
+1,5b,298527,111001133,Badge 7 - Blaine or Sabrina,NOT RUN,NOT RUN,NOT RUN,NOT RUN,,
+1,6,298530,111001136,Elite Four,NOT RUN,NOT RUN,NOT RUN,NOT RUN,,
+2,7,298503,111001109,Psyduck (non-zero badge threshold),NOT RUN,NOT RUN,NOT RUN,NOT RUN,,
+2,8,298532,111001138,Mewtwo (full-length AddSource chain),NOT RUN,NOT RUN,NOT RUN,NOT RUN,,
