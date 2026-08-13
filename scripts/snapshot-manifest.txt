@@ -18,6 +18,10 @@ games/yellow/sets/723/generated/italian/723-canonical.txt|games/yellow/italian/g
 games/yellow/sets/723/generated/italian/723-User.txt|games/yellow/italian/generated/723-Italian-User.txt
 games/yellow/sets/723/generated/italian/ra_asset_definitions.csv|games/yellow/italian/generated/ra_asset_definitions_italian.csv
 games/yellow/sets/723/generated/italian/rich_presence.txt|games/yellow/italian/generated/rich_presence_italian.txt
+games/yellow/sets/8486/generated/italian/8486-canonical.txt|games/yellow/italian/generated/8486-Italian-canonical.txt
+games/yellow/sets/8486/generated/italian/8486-User.txt|games/yellow/italian/generated/8486-Italian-User.txt
+games/yellow/sets/3440/generated/italian/3440-canonical.txt|games/yellow/italian/generated/3440-Italian-canonical.txt
+games/yellow/sets/3440/generated/italian/3440-User.txt|games/yellow/italian/generated/3440-Italian-User.txt
 
 # --- french ---
 games/yellow/versions/french/ra_address_triage.csv|games/yellow/french/data/ra_address_triage.csv
@@ -26,6 +30,10 @@ games/yellow/sets/723/generated/french/723-canonical.txt|games/yellow/french/gen
 games/yellow/sets/723/generated/french/723-User.txt|games/yellow/french/generated/723-French-User.txt
 games/yellow/sets/723/generated/french/ra_asset_definitions.csv|games/yellow/french/generated/ra_asset_definitions_french.csv
 games/yellow/sets/723/generated/french/rich_presence.txt|games/yellow/french/generated/rich_presence_french.txt
+games/yellow/sets/8486/generated/french/8486-canonical.txt|games/yellow/french/generated/8486-French-canonical.txt
+games/yellow/sets/8486/generated/french/8486-User.txt|games/yellow/french/generated/8486-French-User.txt
+games/yellow/sets/3440/generated/french/3440-canonical.txt|games/yellow/french/generated/3440-French-canonical.txt
+games/yellow/sets/3440/generated/french/3440-User.txt|games/yellow/french/generated/3440-French-User.txt
 
 # --- german ---
 games/yellow/versions/german/ra_address_triage.csv|games/yellow/german/data/ra_address_triage.csv
@@ -34,6 +42,10 @@ games/yellow/sets/723/generated/german/723-canonical.txt|games/yellow/german/gen
 games/yellow/sets/723/generated/german/723-User.txt|games/yellow/german/generated/723-German-User.txt
 games/yellow/sets/723/generated/german/ra_asset_definitions.csv|games/yellow/german/generated/ra_asset_definitions_german.csv
 games/yellow/sets/723/generated/german/rich_presence.txt|games/yellow/german/generated/rich_presence_german.txt
+games/yellow/sets/8486/generated/german/8486-canonical.txt|games/yellow/german/generated/8486-German-canonical.txt
+games/yellow/sets/8486/generated/german/8486-User.txt|games/yellow/german/generated/8486-German-User.txt
+games/yellow/sets/3440/generated/german/3440-canonical.txt|games/yellow/german/generated/3440-German-canonical.txt
+games/yellow/sets/3440/generated/german/3440-User.txt|games/yellow/german/generated/3440-German-User.txt
 
 # --- spanish ---
 games/yellow/versions/spanish/ra_address_triage.csv|games/yellow/spanish/data/ra_address_triage.csv
@@ -42,9 +54,22 @@ games/yellow/sets/723/generated/spanish/723-canonical.txt|games/yellow/spanish/g
 games/yellow/sets/723/generated/spanish/723-User.txt|games/yellow/spanish/generated/723-Spanish-User.txt
 games/yellow/sets/723/generated/spanish/ra_asset_definitions.csv|games/yellow/spanish/generated/ra_asset_definitions_spanish.csv
 games/yellow/sets/723/generated/spanish/rich_presence.txt|games/yellow/spanish/generated/rich_presence_spanish.txt
+games/yellow/sets/8486/generated/spanish/8486-canonical.txt|games/yellow/spanish/generated/8486-Spanish-canonical.txt
+games/yellow/sets/8486/generated/spanish/8486-User.txt|games/yellow/spanish/generated/8486-Spanish-User.txt
+games/yellow/sets/3440/generated/spanish/3440-canonical.txt|games/yellow/spanish/generated/3440-Spanish-canonical.txt
+games/yellow/sets/3440/generated/spanish/3440-User.txt|games/yellow/spanish/generated/3440-Spanish-User.txt
 
 # --- shared ---
 # shared/scripts/asset_localizer.py and shared/scripts/csv_safety.py are
 # PUBLIC-OWNED: hand-adapted, locale-agnostic rewrites for this repo, not
 # raw copies of scripts/asset_localizer.py / scripts/csv_safety.py in the
 # source repo. They are intentionally not in this manifest.
+
+# --- build manifest (imported provenance artefact) ---
+# build_manifest.json is produced by the private repo's own build/hashing
+# tooling, run there against its raw generation inputs (English source,
+# per-locale ra_asset_definitions.csv, etc.) -- none of which are published
+# here. This repo imports the resulting manifest as evidence of the hashes;
+# it does not, and should not, regenerate it from raw inputs itself. See
+# the README's "Build hashing / provenance" section.
+games/yellow/build_manifest.json|games/yellow/build_manifest.json
