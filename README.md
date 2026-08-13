@@ -52,7 +52,7 @@ for the PASS/FAIL/NOT RUN tracking grid.
 | Set | Description | Status |
 |---|---|---|
 | 8486 | Prof. Oak Challenge | ✅ Generated & validated for all four locales, smoke-test suite designed, runtime testing pending |
-| 3440 | — | ✅ Generated & validated for all four locales, runtime testing pending |
+| 3440 | "Shiny" Pokémon | ✅ Generated & validated for all four locales, runtime testing pending |
 
 ### Regional build matrix
 
